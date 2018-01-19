@@ -1,5 +1,10 @@
 // server.js
 // where your node app starts
+var dreams = [
+    "Find and count some sheep",
+    "Climb a really tall mountain",
+    "Wash the dishes"
+  ];
 
 // init project
 var express = require('express');
@@ -28,12 +33,12 @@ app.post("/dreams", function (request, response) {
 
 // Simple in-memory store for now
 var dreams = [
-  "Find and count some sheep",
+  "Find and count some sheeps",
   "Climb a really tall mountain",
   "Wash the dishes"
 ];
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+const listener = app.listen(process.env.PORT||4000,function(){
+  console.log('Your app is listening on port ' + listener.address.port);
 });
